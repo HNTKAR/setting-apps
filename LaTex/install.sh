@@ -26,6 +26,5 @@ INFOPATH=$INFOPATH:/usr/local/texlive/$TexLiveVersion/texmf-dist/doc/info
 PATH=$PATH:/usr/local/texlive/$TexLiveVersion/bin/x86_64-linux
 EOF
 
-yes '' |cpan
-cpan  YAML::Tiny
+yes '' |sudo cpan YAML::Tiny
 # cpan  Log::Log4perl
