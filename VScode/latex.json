@@ -1,0 +1,59 @@
+{
+    // Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+    // same ids are connected.
+    // Example:
+    // "Print to console": {
+    // 	"prefix": "log",
+    // 	"body": [
+    // 		"console.log('$1');",
+    // 		"$2"
+    // 	],
+    // 	"description": "Log output to console"
+    // }
+    "PreliminaryDraught": {
+        // Reference:/usr/local/texlive/2021/texmf-dist/tex/platex/jsclasses/jsarticle.cls
+        "prefix": "thesis",
+        "body": [
+            "",
+            "%-----SPENIT THESIS START-----%",
+            "\\makeatletter",
+            "",
+            "\\def\\teacher#1{\\def\\@teacher{\\textgt{指導教員 教授\\quad#1}}}",
+            "\\def\\student#1#2{\\def\\@student{\\textup{#1} \\quad\\textgt{#2}}}",
+            "",
+            "\\def\\@maketitle{%",
+            "\\newpage\\null",
+            "\\vskip 2em",
+            "\\begin{center}%",
+            "\\let\\footnote\\thanks",
+            "{\\LARGE \\@title \\par}%",
+            "\\vskip 1.5em",
+            "{\\large",
+            "\\lineskip .5em",
+            "\\begin{flushright}",
+            "\\begin{tabular}[t]{r}%",
+            "\\@student\\\\\\%",
+            "\\@teacher\\par%",
+            "\\end{tabular}\\par%",
+            "\\end{flushright}",
+            "}%",
+            "\\vskip 1em",
+            "{\\large \\@date}%",
+            "\\end{center}%",
+            "}",
+            "",
+            "\\makeatother",
+            "",
+            "\\date{}",
+            "\\student{${1:学籍番号}}{${2:名前}}",
+            "\\teacher{${3:教員名}}",
+            "\\title{\\textgt {${4:和文タイトル}}\\\\\\",
+            "\\textit{\\normalsize {${5:英文タイトル}}}}",
+            "%-----SPENIT THESIS END-----%",
+            "$0",
+        ],
+        "description": "卒論予稿用"
+    }
+}

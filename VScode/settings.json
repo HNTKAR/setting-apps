@@ -1,0 +1,90 @@
+{
+    "editor.formatOnSave": true,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "latex-workshop.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-y=defaultIndent: '%INDENT%'",
+        "-l=indent.yaml"
+    ],
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.outDir": "output",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latex_compile",
+            "tools": [
+                "platex",
+                "pbibtex",
+                "platex",
+                "platex",
+                "dvipdfmx",
+                // "ptex2pdf",
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "ptex2pdf",
+            "command": "ptex2pdf",
+            "args": [
+                "-interaction=nonstopmode",
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "-output-directory",
+                "%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "platex",
+            "command": "platex",
+            "args": [
+                "-shell-escape",
+                "-halt-on-error",
+                "-kanji",
+                "utf8",
+                "-synctex",
+                "1",
+                "-output-directory",
+                "%OUTDIR%",
+                "%DOC%",
+            ]
+        },
+        {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "%OUTDIR%/%DOCFILE%",
+            ]
+        },
+        {
+            "name": "dvipdfmx",
+            "command": "dvipdfmx",
+            "args": [
+                "-o",
+                "%OUTDIR%/%DOCFILE%.pdf",
+                "%OUTDIR%/%DOCFILE%",
+            ]
+        }
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "remote.SSH.remotePlatform": {
+        "CentOS.VM": "linux",
+        "debian.VM": "linux",
+        "gentoo.VM": "linux",
+        "ubuntu.VM": "linux",
+        "test.CentOS.VM": "linux",
+        "test.debian.VM": "linux",
+        "test.gentoo.VM": "linux",
+        "test.ubuntu.VM": "linux",
+    },
+    "vhdl.formatter.case.keyword": "LowerCase",
+    "vhdl.formatter.case.typename": "LowerCase",
+    "workbench.editorAssociations": {
+        "*.pdf": "latex-workshop-pdf-hook",
+    },
+}
