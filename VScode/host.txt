@@ -1,0 +1,3 @@
+ms-ceintl.vscode-language-pack-ja
+remote.vscode-remote-extensionpack
+vscodevim.vim
