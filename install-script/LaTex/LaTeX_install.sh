@@ -1,6 +1,6 @@
 #!/bin/bash
 name=$(whoami)
-sudo dnf -y install inkscape ghostscript perl
+sudo dnf -y install inkscape ghostscript perl || sudo apt -y install inkscape ghostscript perl
 sudo mkdir -p /usr/local/texlive/
 sudo chmod 770 /usr/local/texlive/
 sudo chown $name:wheel /usr/local/texlive/
