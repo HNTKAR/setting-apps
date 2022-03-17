@@ -1,0 +1,25 @@
+<!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh net-edit default2
+or other application using the libvirt API.
+-->
+<!-- 
+copy to /etc/libvirt/qemu/networks/custom-default.xml
+```sh
+virsh net-define /etc/libvirt/qemu/networks/custom-default.xml
+```
+ -->
+
+<network>
+  <name>custom-default</name>
+  <uuid>e318b106-30be-4d3a-9999-2a7dffdbed1c</uuid>
+  <forward mode='nat'/>
+  <bridge name='virbr1' stp='on' delay='0'/>
+  <mac address='52:54:99:99:99:99'/>
+  <ip address='192.168.125.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.125.2' end='192.168.125.254'/>
+    </dhcp>
+  </ip>
+</network>
